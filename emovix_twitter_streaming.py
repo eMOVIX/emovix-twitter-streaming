@@ -25,6 +25,10 @@ class CustomStreamListener(tweepy.StreamListener):
 
     def on_data(self, data):
         tweet = json.loads(data)
+        if tweet.limit:
+            print 'Limit notice received'
+            logging.debug('Limit notice received')
+            return True
         twitterStatus = db.twitterStatus
         self.db.twitterStatus.update(tweet, tweet, upsert=True)
         return True
