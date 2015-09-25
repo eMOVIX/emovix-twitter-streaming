@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
     while True:
         try:
-            logging.warning('Connectiong ...')
+            logging.debug('Connecting to Twitter stream ...')
             stream = tweepy.streaming.Stream(auth, CustomStreamListener(api))
             stream.filter( locations = [-180, -90, 180, 90] )
         except Exception as e:
