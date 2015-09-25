@@ -23,7 +23,7 @@ class CustomStreamListener(tweepy.StreamListener):
     def __init__(self, api):
         self.api = api
         super(tweepy.StreamListener, self).__init__()
-        self.db = pymongo.MongoClient().emovixtest
+        self.db = pymongo.MongoClient().emovix
 
     def on_data(self, data):
         tweet = json.loads(data)
