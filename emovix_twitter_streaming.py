@@ -7,7 +7,11 @@ from pymongo import MongoClient
 import json
 import logging
 
-logging.basicConfig(filename='emovix_twitter_streaming.log',level=logging.WARNING)
+logging.basicConfig(
+    filename='emovix_twitter_streaming.log',
+    level=logging.WARNING,
+    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+    datefmt='%d-%m-%y %H:%M')
 
 # Configuration parameters
 access_token = ""
@@ -32,6 +36,7 @@ class CustomStreamListener(tweepy.StreamListener):
         # https://dev.twitter.com/streaming/overview/messages-types#limit_notices
         if tweet.get('limit'):
             logging.debug('Limit notice received: ' + str(tweet['limit']['track']))
+            self.db.twitterLimitNotice.insert(tweet)
             return True
 
         twitterStatus = db.twitterStatus
