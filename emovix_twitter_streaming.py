@@ -1,6 +1,5 @@
 __author__ = 'Jordi Vilaplana'
 
-import httplib
 import tweepy
 import pymongo
 from pymongo import MongoClient
