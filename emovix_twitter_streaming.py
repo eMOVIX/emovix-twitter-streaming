@@ -21,6 +21,15 @@ database_name = ""
 
 ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
 
+ignored_tweet_fields = ["contributors", "truncated", "is_quote_status", "in_reply_to_status_id", "in_reply_to_screen_name",
+                        "in_reply_to_user_id", "favorited", "in_reply_to_user_id_str", "filter_level", "in_reply_to_status_id_str"]
+
+ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "default_profile_image", "verified", "profile_image_url_https",
+                       "profile_sidebar_fill_color", "profile_text_color", "profile_sidebar_border_color", "id_str", "profile_background_color",
+                       "profile_background_image_url_https", "utc_offset", "profile_link_color", "profile_image_url", "following",
+                       "profile_background_image_url", "profile_background_tile", "notifications", "created_at", "contributors_enabled",
+                       "protected", "default_profile", "is_translator"]
+
 client = None
 db = None
 
@@ -43,7 +52,16 @@ class CustomStreamListener(tweepy.StreamListener):
         if tweet.get('lang') in ignored_languages:
             return True
 
+        user = tweet['user']
+
+        for field in ignored_tweet_fields:
+            del tweet[field]
+
+        for field in ignored_user_fields:
+            del tweet['user'][field]
+
         self.db.twitterStatus.update(tweet, tweet, upsert=True)
+        self.db.twitterUser.update(user, user, upsert=True)
         return True
 
     def on_error(self, status):
@@ -82,6 +100,7 @@ if __name__ == '__main__':
         except Exception as e:
             # Oh well, reconnect and keep trucking
             logging.error(e.__class__)
+            logging.error(e)
             continue
         except KeyboardInterrupt:
             stream.disconnect()
