@@ -19,6 +19,8 @@ consumer_key = ""
 consumer_secret = ""
 database_name = ""
 
+ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
+
 client = None
 db = None
 
@@ -38,7 +40,9 @@ class CustomStreamListener(tweepy.StreamListener):
             self.db.twitterLimitNotice.insert(tweet)
             return True
 
-        twitterStatus = db.twitterStatus
+        if tweet.get('lang') in ignored_languages:
+            return True
+
         self.db.twitterStatus.update(tweet, tweet, upsert=True)
         return True
 
