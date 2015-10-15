@@ -16,3 +16,13 @@ Application to fetch information from the public Twitter streaming API
     virtualenv venv
     source venv/bin/activate
     pip install -r requirements.txt
+
+## Configuration
+
+Add your Twitter API credentials and MongoDB database name to the configuration file:
+
+    vim config.json
+
+## Usage
+
+    python emovix-twitter-streaming.py
