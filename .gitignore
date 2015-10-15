@@ -58,3 +58,9 @@ target/
 
 # PyCharm
 .idea/
+
+# virtualenv
+venv/
+
+# config.json
+config.json
