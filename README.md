@@ -11,7 +11,7 @@ Application to fetch information from the public Twitter streaming API
 
 ## Installation
 
-    git clone
+    git clone https://github.com/eMOVIX/emovix-twitter-streaming.git
     cd emovix-twitter-streaming
     virtualenv venv
     source venv/bin/activate
