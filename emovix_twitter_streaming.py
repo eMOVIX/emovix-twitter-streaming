@@ -61,7 +61,7 @@ class CustomStreamListener(tweepy.StreamListener):
             del tweet['user'][field]
 
         self.db.twitterStatus.update(tweet, tweet, upsert=True)
-        self.db.twitterUser.update(user, user, upsert=True)
+        self.db.twitterUser.update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
         return True
 
     def on_error(self, status):
