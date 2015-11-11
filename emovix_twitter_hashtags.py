@@ -19,7 +19,6 @@ consumer_key = ""
 consumer_secret = ""
 database_name = ""
 
-ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
 
 ignored_tweet_fields = ["contributors", "truncated", "is_quote_status", "in_reply_to_status_id", "in_reply_to_screen_name", "geo",
                         "in_reply_to_user_id", "favorited", "in_reply_to_user_id_str", "filter_level", "in_reply_to_status_id_str"]
@@ -29,6 +28,8 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
                        "profile_background_image_url_https", "utc_offset", "profile_link_color", "profile_image_url", "following",
                        "profile_background_image_url", "profile_background_tile", "notifications", "created_at", "contributors_enabled",
                        "protected", "default_profile", "is_translator"]
+
+hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D"]
 
 client = None
 db = None
@@ -42,16 +43,6 @@ class CustomStreamListener(tweepy.StreamListener):
     def on_data(self, data):
         tweet = json.loads(data)
 
-        # This code ignores limit notices
-        # https://dev.twitter.com/streaming/overview/messages-types#limit_notices
-        if tweet.get('limit'):
-            logging.debug('Limit notice received: ' + str(tweet['limit']['track']))
-            self.db.twitterLimitNotice.insert(tweet)
-            return True
-
-        if tweet.get('lang') in ignored_languages:
-            return True
-
         user = tweet['user']
 
         for field in ignored_tweet_fields:
@@ -60,7 +51,7 @@ class CustomStreamListener(tweepy.StreamListener):
         for field in ignored_user_fields:
             del tweet['user'][field]
 
-        self.db.twitterStatus.update(tweet, tweet, upsert=True)
+        self.db.twitterStatus20D.update(tweet, tweet, upsert=True)
         self.db.twitterUser.update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
         return True
 
@@ -96,7 +87,7 @@ if __name__ == '__main__':
         try:
             logging.debug('Connecting to Twitter stream ...')
             stream = tweepy.streaming.Stream(auth, CustomStreamListener(api))
-            stream.filter( locations = [-180, -90, 180, 90] )
+            stream.filter( track = hashtags )
         except Exception as e:
             # Oh well, reconnect and keep trucking
             logging.error(e.__class__)
