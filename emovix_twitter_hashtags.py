@@ -29,7 +29,10 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
                        "profile_background_image_url", "profile_background_tile", "notifications", "created_at", "contributors_enabled",
                        "protected", "default_profile", "is_translator"]
 
-hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D"]
+hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D",
+            "Partido Popular", "ppopular", "PSOE", "Unidad Popular", "Unidadpopular__", "IUnida", "20dl_cat", "ehbildu", "unio_cat", "upyd",
+            "eajpnv", "Esquerra_ERC", "EnComu_Podem", "noscgalega", "coalicion", "EsElMoment", "geroabai", "En_Marea", "CiudadanosCs", "Ciudadanos",
+            "ahorapodemos", "Pablo_Iglesias_", "sanchezcastejon", "Albert_Rivera", "marianorajoy"]
 
 client = None
 db = None
