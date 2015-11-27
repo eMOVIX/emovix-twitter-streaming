@@ -46,6 +46,13 @@ class CustomStreamListener(tweepy.StreamListener):
     def on_data(self, data):
         tweet = json.loads(data)
 
+        # This code ignores limit notices
+        # https://dev.twitter.com/streaming/overview/messages-types#limit_notices
+        if tweet.get('limit'):
+            logging.debug('Limit notice received: ' + str(tweet['limit']['track']))
+            self.db.twitterLimitNotice.insert(tweet)
+            return True
+
         user = tweet['user']
 
         for field in ignored_tweet_fields:
