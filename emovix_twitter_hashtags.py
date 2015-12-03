@@ -34,7 +34,7 @@ hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D",
             "eajpnv", "Esquerra_ERC", "EnComu_Podem", "noscgalega", "coalicion", "EsElMoment", "geroabai", "En_Marea", "CiudadanosCs", "Ciudadanos",
             "ahorapodemos", "#Podemos", "Pablo_Iglesias_", "sanchezcastejon", "Albert_Rivera", "marianorajoy", "IzquierdaUnida", "UPyD", "PNV",
             "Artur Mas", "Duran", "DuranLleida", "ConvergenciaCAT"
-            "EspañaEnSerio", "ElCambioqueUne", "IlusiónNaranja", "Unpaiscontigo", "UnidadPopular20D", "Egibar", "MásEspaña", "BilduErabakira",
+            "EspanaEnSerio", "ElCambioqueUne", "IlusionNaranja", "Unpaiscontigo", "UnidadPopular20D", "Egibar", "MasEspana", "BilduErabakira",
             "RTmetropolitanTour", "GZtenquestar", "TDCanarias"]
 
 client = None
