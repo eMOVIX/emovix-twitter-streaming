@@ -30,9 +30,12 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
                        "protected", "default_profile", "is_translator"]
 
 hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D",
-            "Partido Popular", "ppopular", "PSOE", "Unidad Popular", "Unidadpopular__", "IUnida", "20dl_cat", "ehbildu", "unio_cat", "upyd",
+            "Partido Popular", "PartidoPopular", "ppopular", "PSOE", "Unidad Popular", "Unidadpopular__", "IUnida", "20dl_cat", "ehbildu", "unio_cat", "upyd",
             "eajpnv", "Esquerra_ERC", "EnComu_Podem", "noscgalega", "coalicion", "EsElMoment", "geroabai", "En_Marea", "CiudadanosCs", "Ciudadanos",
-            "ahorapodemos", "Pablo_Iglesias_", "sanchezcastejon", "Albert_Rivera", "marianorajoy"]
+            "ahorapodemos", "#Podemos", "Pablo_Iglesias_", "sanchezcastejon", "Albert_Rivera", "marianorajoy", "IzquierdaUnida", "UPyD", "PNV",
+            "Artur Mas", "Duran", "DuranLleida", "ConvergenciaCAT"
+            "EspañaEnSerio", "ElCambioqueUne", "IlusiónNaranja", "Unpaiscontigo", "UnidadPopular20D", "Egibar", "MásEspaña", "BilduErabakira",
+            "RTmetropolitanTour", "GZtenquestar", "TDCanarias"]
 
 client = None
 db = None
