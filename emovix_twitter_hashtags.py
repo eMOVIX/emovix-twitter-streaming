@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 __author__ = 'Jordi Vilaplana'
 
 import tweepy
@@ -19,7 +21,6 @@ consumer_key = ""
 consumer_secret = ""
 database_name = ""
 
-
 ignored_tweet_fields = ["contributors", "truncated", "is_quote_status", "in_reply_to_status_id", "in_reply_to_screen_name", "geo",
                         "in_reply_to_user_id", "favorited", "in_reply_to_user_id_str", "filter_level", "in_reply_to_status_id_str"]
 
@@ -29,13 +30,50 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
                        "profile_background_image_url", "profile_background_tile", "notifications", "created_at", "contributors_enabled",
                        "protected", "default_profile", "is_translator"]
 
-hashtags = ["20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D",
-            "Partido Popular", "PartidoPopular", "ppopular", "PSOE", "Unidad Popular", "Unidadpopular__", "IUnida", "20dl_cat", "ehbildu", "unio_cat", "upyd",
-            "eajpnv", "Esquerra_ERC", "EnComu_Podem", "noscgalega", "coalicion", "EsElMoment", "geroabai", "En_Marea", "CiudadanosCs", "Ciudadanos",
-            "ahorapodemos", "#Podemos", "Pablo_Iglesias_", "sanchezcastejon", "Albert_Rivera", "marianorajoy", "IzquierdaUnida", "UPyD", "PNV",
-            "Artur Mas", "Duran", "DuranLleida", "ConvergenciaCAT"
-            "EspanaEnSerio", "ElCambioqueUne", "IlusionNaranja", "Unpaiscontigo", "UnidadPopular20D", "Egibar", "MasEspana", "BilduErabakira",
-            "RTmetropolitanTour", "GZtenquestar", "TDCanarias"]
+hashtags = [
+    # Global hashtags
+    "20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D",
+    # Partido Popular
+    "Partido Popular", "PartidoPopular", "ppopular", "marianorajoy", u"#EspañaEnSerio", "#VotaPP", "@Sorayapp", "#PP",
+    "@mdcospedal", "pablocasado_", "#YoVotoPP", "#EmpleoEnSerio", "@NNGG_Es", "pablocasado_", "@AlfonsoAlonsoPP",
+    # PSOE
+    "PSOE", "PSC", "@socialistes_cat", "#FemForaRajoy", "#SomLaSolucio", "@carmechacon", "sanchezcastejon",
+    "#OrgulloSocialista", "#VOTAPSOE", "#PedroPresidente", u"#UnFuturoParaLaMayoría", "ElCambioqueUne",
+    # Ciudadanos-Partido de la Ciudadanía
+    "@GirautaOficial", "#AlbertRivera", "Albert_Rivera", "CiudadanosCs", "#RutaCiudadana", "#ConIlusion",
+    "@sdelcampocs", u"#Ilusión", "Ciudadanos", "@InesArrimadas", "#AlbertPresidente", "IlusionNaranja", u"IlusiónNaranja",
+    # Podemos
+    "#UNPAISCONTIGO", "ahorapodemos", "Pablo_Iglesias_", "@AdaColau", "@VickyRosell", "#LeyDeImpunidad", "#Podemos",
+    "Unpaiscontigo", u"Unpaíscontigo"
+    # Democràcia i llibertat
+    "ConvergenciaCAT", "@DemocratesCAT", "@reagrupament", "#possible", "@20dl_cat", "@joseprull", "@joanbague",
+    "@peresalo68", "@Ferran_Bel", "@franceschoms", "Artur Mas",
+    # ERC
+    "ERC", u"#SomRepública", "Esquerra_ERC", "@GabrielRufian", "@JoanTarda", "@junqueras", "@MartaRovira",
+    "catalunyasi", "RTmetropolitanTour",
+    # Euskal Herria Bildu
+    "ehbildu", "BilduErabakira", "@ehbildu_legebil",
+    # Unió
+    "unio_cat", "@DuranLleida", u"#Solucions!", "@Marti_Barbera", "@Ramon_Espadaler", "Duran", "DuranLleida",
+    # UPyD
+    "UPyD", "#VotaUPYD", u"#MásEspaña", "@Herzogoff", "@sryuriaguilar",
+    # Unidad Popular
+    "Unidad Popular", "Unidadpopular__", "IUnida", "agarzon", "IzquierdaUnida", "UnidadPopular20D",
+    # Partido Nacionalista Vasco
+    "eajpnv", "PNV", "Egibar",
+    # En Comú Podem
+    "EnComu_Podem",
+    # Nós-Candidatura Galega
+    "noscgalega", "coalicion",
+    # Coalición Canaria-Partido Nacionalista Canario
+    "TDCanarias",
+    # Compromís-Podemos-És el moment
+    "EsElMoment", u"#ÉsElMoment",
+    # Geroa Bai
+    "geroabai",
+    # En Marea
+    "En_Marea", "GZtenquestar",
+    ]
 
 client = None
 db = None
