@@ -33,6 +33,7 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
 hashtags = [
     # Global hashtags
     "20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D", "#ElBipartidismoDebate", "#CaraACaraL6",
+    "#RescataMiVoto", "#NOalVotoRogado", "#ValoraTuVoto", "#VotoRogadoVotoRobado",
     # Partido Popular
     "Partido Popular", "PartidoPopular", "ppopular", "marianorajoy", u"#EspañaEnSerio", "#VotaPP", "@Sorayapp", "#PP",
     "@mdcospedal", "pablocasado_", "#YoVotoPP", "#EmpleoEnSerio", "@NNGG_Es", "pablocasado_", "@AlfonsoAlonsoPP",
