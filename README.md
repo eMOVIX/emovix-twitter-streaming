@@ -19,10 +19,10 @@ Application to fetch information from the public Twitter streaming API
 
 ## Configuration
 
-Add your Twitter API credentials and MongoDB database name to the configuration file:
+Add your Language Detection API credentials to the configuration file:
 
     vim config.json
 
 ## Usage
 
-    python emovix-twitter-streaming.py
+    python emovix-twitter-detectlang.py
