@@ -18,8 +18,9 @@ access_token_secret = ""
 consumer_key = ""
 consumer_secret = ""
 database_name = ""
+source_box = ""
 
-ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
+#ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
 
 ignored_tweet_fields = ["contributors", "truncated", "is_quote_status", "in_reply_to_status_id", "in_reply_to_screen_name", "geo",
                         "in_reply_to_user_id", "favorited", "in_reply_to_user_id_str", "filter_level", "in_reply_to_status_id_str"]
@@ -49,8 +50,8 @@ class CustomStreamListener(tweepy.StreamListener):
             self.db.twitterLimitNotice.insert(tweet)
             return True
 
-        if tweet.get('lang') in ignored_languages:
-            return True
+        #if tweet.get('lang') in ignored_languages:
+        #    return True
 
         user = tweet['user']
 
@@ -60,6 +61,8 @@ class CustomStreamListener(tweepy.StreamListener):
         for field in ignored_user_fields:
             del tweet['user'][field]
 
+        # We mark each tweet with its source bounding box (defined in the config.json file)
+        tweet['source_box'] = source_box
         self.db.twitterStatus.update(tweet, tweet, upsert=True)
         self.db.twitterUser.update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
         return True
@@ -84,6 +87,7 @@ if __name__ == '__main__':
         consumer_key = config['consumer_key']
         consumer_secret = config['consumer_secret']
         database_name = config['database_name']
+        source_box = config['source_box']
 
     client = MongoClient('mongodb://localhost:27017/')
     db = client[database_name]
