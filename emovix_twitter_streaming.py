@@ -18,7 +18,10 @@ access_token_secret = ""
 consumer_key = ""
 consumer_secret = ""
 database_name = ""
+database_address = ""
 source_box = ""
+twitterStatusCol = ""
+twitterUserCol = ""
 
 #ignored_languages = ["ja", "in", "tr", "tl", "ar", "ru", "th"]
 
@@ -38,7 +41,8 @@ class CustomStreamListener(tweepy.StreamListener):
     def __init__(self, api):
         self.api = api
         super(tweepy.StreamListener, self).__init__()
-        self.db = pymongo.MongoClient().emovix
+        #self.db = pymongo.MongoClient().emovix
+        self.db = db
 
     def on_data(self, data):
         tweet = json.loads(data)
@@ -47,7 +51,7 @@ class CustomStreamListener(tweepy.StreamListener):
         # https://dev.twitter.com/streaming/overview/messages-types#limit_notices
         if tweet.get('limit'):
             logging.debug('Limit notice received: ' + str(tweet['limit']['track']))
-            self.db.twitterLimitNotice.insert(tweet)
+            #self.db.twitterLimitNotice.insert(tweet)
             return True
 
         #if tweet.get('lang') in ignored_languages:
@@ -62,9 +66,10 @@ class CustomStreamListener(tweepy.StreamListener):
             del tweet['user'][field]
 
         # We mark each tweet with its source bounding box (defined in the config.json file)
-        tweet['source_box'] = source_box
-        self.db.twitterStatus.update(tweet, tweet, upsert=True)
-        self.db.twitterUser.update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
+        #tweet['source_box'] = source_box
+
+        self.db[twitterStatusCol].update(tweet, tweet, upsert=True)
+        self.db[twitterUserCol].update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
         return True
 
     def on_error(self, status):
@@ -86,10 +91,13 @@ if __name__ == '__main__':
         access_token_secret = config['access_token_secret']
         consumer_key = config['consumer_key']
         consumer_secret = config['consumer_secret']
+        database_address = config['database_address']
         database_name = config['database_name']
         source_box = config['source_box']
+        twitterStatusCol = source_box + "_twitterStatus"
+        twitterUserCol = source_box + "_twitterUser"
 
-    client = MongoClient('mongodb://localhost:27017/')
+    client = MongoClient('mongodb://' + database_address + ':27017/')
     db = client[database_name]
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
