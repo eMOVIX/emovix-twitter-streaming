@@ -9,7 +9,7 @@ import json
 import logging
 
 logging.basicConfig(
-    filename='emovix_twitter_hashtags.log',
+    filename='emovix_twitter_edu.log',
     level=logging.WARNING,
     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
     datefmt='%d-%m-%y %H:%M')
@@ -35,48 +35,39 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
                        "protected", "default_profile", "is_translator"]
 
 hashtags = [
-    # Global hashtags
-    "20D", "EleccionesGenerales2015", "Elecciones2015", "Elecciones20D", "#ElBipartidismoDebate", "#CaraACaraL6",
-    "#RescataMiVoto", "#NOalVotoRogado", "#ValoraTuVoto", "#VotoRogadoVotoRobado",
-    # Partido Popular
-    "Partido Popular", "PartidoPopular", "ppopular", "marianorajoy", u"#EspañaEnSerio", "#VotaPP", "@Sorayapp", "#PP",
-    "@mdcospedal", "pablocasado_", "#YoVotoPP", "#EmpleoEnSerio", "@NNGG_Es", "pablocasado_", "@AlfonsoAlonsoPP",
+    # Global Hashtags
+    "Ley Wert", "#AcuerdoReformas", "LOMCE", u"Educación", "Reforma Laboral",
+    # PP
+    "Partido Popular", "PartidoPopular", "ppopular", "@marianorajoy", u"#EspañaEnSerio", "@Sorayapp", "#PP",
+    "@mdcospedal", "pablocasado_", "#EmpleoEnSerio", "@NNGG_Es", "pablocasado_", "@AlfonsoAlonsoPP",
     # PSOE
-    "PSOE", "PSC", "@socialistes_cat", "#FemForaRajoy", "#SomLaSolucio", "@carmechacon", "sanchezcastejon",
-    "#OrgulloSocialista", "#VOTAPSOE", "#PedroPresidente", u"#UnFuturoParaLaMayoría", "ElCambioqueUne",
-    # Ciudadanos-Partido de la Ciudadanía
+    "PSOE", "PSC", "@socialistes_cat", "@carmechacon", "@sanchezcastejon", "@carmechacon",
+    "#OrgulloSocialista", "#PedroPresidente", u"#UnFuturoParaLaMayoría", "ElCambioqueUne",
+    # PODEMOS
+    "#UNPAISCONTIGO", "ahorapodemos", "@Pablo_Iglesias_", "@AdaColau", "@VickyRosell", "#LeyDeImpunidad", "#Podemos",
+    "Unpaiscontigo", u"Unpaíscontigo", "@MonederoJC", "@ierrejon",
+    # C's
     "@GirautaOficial", "#AlbertRivera", "Albert_Rivera", "CiudadanosCs", "#RutaCiudadana", "#ConIlusion",
     "@sdelcampocs", u"#Ilusión", "Ciudadanos", "@InesArrimadas", "#AlbertPresidente", "IlusionNaranja", u"IlusiónNaranja",
-    # Podemos
-    "#UNPAISCONTIGO", "ahorapodemos", "Pablo_Iglesias_", "@AdaColau", "@VickyRosell", "#LeyDeImpunidad", "#Podemos",
-    "Unpaiscontigo", u"Unpaíscontigo"
-    # Democràcia i llibertat
-    "ConvergenciaCAT", "@DemocratesCAT", "@reagrupament", "#possible", "@20dl_cat", "@joseprull", "@joanbague",
+
+    "@EnComu_Podem", "@XavierDomenechs"
+
+    "ConvergenciaCAT", "@DemocratesCAT", "#possible", "@20dl_cat", "@joseprull", "@joanbague",
     "@peresalo68", "@Ferran_Bel", "@franceschoms", "Artur Mas",
-    # ERC
-    "ERC", u"#SomRepública", "Esquerra_ERC", "@GabrielRufian", "@JoanTarda", "@junqueras", "@MartaRovira",
-    "catalunyasi", "RTmetropolitanTour",
-    # Euskal Herria Bildu
+
+    "ERC", u"#SomRepública", "Esquerra_ERC", "@gabrielrufian", "@JoanTarda", "@junqueras", "@MartaRovira",
+    "catalunyasi",
+
     "ehbildu", "BilduErabakira", "@ehbildu_legebil",
-    # Unió
-    "unio_cat", "@DuranLleida", u"#Solucions!", "@Marti_Barbera", "@Ramon_Espadaler", "Duran", "DuranLleida",
-    # UPyD
-    "UPyD", "#VotaUPYD", u"#MásEspaña", "@Herzogoff", "@sryuriaguilar",
-    # Unidad Popular
-    "Unidad Popular", "Unidadpopular__", "IUnida", "agarzon", "IzquierdaUnida", "UnidadPopular20D",
-    # Partido Nacionalista Vasco
+
     "eajpnv", "PNV", "Egibar",
-    # En Comú Podem
-    "EnComu_Podem",
-    # Nós-Candidatura Galega
-    "noscgalega", "coalicion",
-    # Coalición Canaria-Partido Nacionalista Canario
+
+    "@agarzon", "@iunida",
+
     "TDCanarias",
-    # Compromís-Podemos-És el moment
+
     "EsElMoment", u"#ÉsElMoment",
-    # Geroa Bai
-    "geroabai",
-    # En Marea
+
     "En_Marea", "GZtenquestar",
     ]
 
