@@ -36,22 +36,57 @@ ignored_user_fields = ["follow_request_sent", "profile_use_background_image", "d
 
 hashtags = [
     # Global hashtags
-    "#26J", "#Elecciones26j", "#Elecciones2016", "#Elecciones26J",
-    "#RescataMiVoto", "#NOalVotoRogado", "#ValoraTuVoto", "#VotoRogadoVotoRobado",
+    "#26J",
+    "#Elecciones26j",
+    "#Elecciones2016",
+    "#Elecciones26J",
+    "#RescataMiVoto",
+    "#NOalVotoRogado",
+    "#ValoraTuVoto",
+    "#VotoRogado",
+    "#VotoRobado",
+    "#VotoRogadoVotoRobado",
+    "#MareaGranate",
     # Partido Popular
-    "Partido Popular", "PartidoPopular", "#Afavor", u"#BuenaGestión", u"#EspañaEnSerio", "#VotaPP", "@Sorayapp", "#PP",
-    "@mdcospedal", "pablocasado_", "#YoVotoPP", "#EmpleoEnSerio", "@NNGG_Es", "pablocasado_", "@AlfonsoAlonsoPP",
+    "#PartidoPopular",
+    "#Afavor",
+    u"#BuenaGestión",
+    u"#EspañaEnSerio",
+    "#VotaPP",
+    "#PP",
+    "#YoVotoPP",
+    "#EmpleoEnSerio",
     # PSOE
-    u"#LaHoraDelSí", "PSC", "@socialistes_cat", "#FemForaRajoy", "#SomLaSolucio", "@carmechacon", "sanchezcastejon",
-    "#OrgulloSocialista", "#VOTAPSOE", "#PedroPresidente", u"#UnFuturoParaLaMayoría", "ElCambioqueUne",
+    "#PSOE",
+    u"#LaHoraDelSí",
+    "#PSC",
+    "#FemForaRajoy",
+    "#SomLaSolucio",
+    "#OrgulloSocialista",
+    "#VOTAPSOE",
+    "#PedroPresidente",
+    u"#UnFuturoParaLaMayoría",
+    "ElCambioqueUne",
     # Ciudadanos-Partido de la Ciudadanía
-    "@GirautaOficial", "#AlbertRivera", "#RutaCiudadana", "#ConIlusion",
-    "@sdelcampocs", u"#Ilusión", "Ciudadanos", "@InesArrimadas", "#AlbertPresidente", "IlusionNaranja", u"IlusiónNaranja",
+    "#AlbertRivera",
+    "#RutaCiudadana",
+    "#ConIlusion",
+    u"#Ilusión",
+    "#Ciudadanos",
+    "#AlbertPresidente",
+    "#IlusionNaranja",
+    u"#IlusiónNaranja",
     # Podemos
-    "#UNPAISCONTIGO", "ahorapodemos", u"#TúHacesPodemos", "@AdaColau", "@VickyRosell", "#LeyDeImpunidad", "#Podemos",
-    "Unpaiscontigo", u"Unpaíscontigo"
+    "#Podemos",
+    "#UnidosPodemos",
+    "#UNPAISCONTIGO",
+    u"#Unpaíscontigo",
+    u"#TúHacesPodemos",
+    "#LeyDeImpunidad",
+    "#SumamosParaGanar",
+    u"#LaSonrisaDeUnPaís",
     # Democràcia i llibertat
-    "ConvergenciaCAT", "@DemocratesCAT", "@reagrupament", "#possible", "@20dl_cat", "@joseprull", "@joanbague",
+    "@DemocratesCAT", "@reagrupament", "#possible", "@20dl_cat", "@joseprull", "@joanbague",
     "@peresalo68", "@Ferran_Bel", "@franceschoms", "Artur Mas",
     # ERC
     "ERC", u"#SomRepública", "Esquerra_ERC", "@GabrielRufian", "@JoanTarda", "@junqueras", "@MartaRovira",
@@ -85,10 +120,15 @@ follow = [
     "20509689",   # @PPopular
     "343447873",  # @marianorajoy
     "76914701",   # @Sorayapp
+    "220958101",  # @mdcospedal
+    "523386042",  # @pablocasado_
+    "109286281",  # @NNGG_Es
+    "437586117",  # @AlfonsoAlonsoPP
 
     # Partido Socialista Obrero Español (PSOE)
     "50982086",   # @PSOE
     "68740712",   # @sanchezcastejon
+    "372163914",  # @carmechacon
 
     # Unidos Podemos
     "2288138575", # @ahorapodemos
@@ -102,10 +142,14 @@ follow = [
     # Compromís-Podemos-EUPV: A la Valenciana
     "378944786",  # @joanbaldovi
 
+    "102095809",  # @AdaColau
+
     # Ciudadanos-Partido de la Ciudadanía (C's)
     "19028805",   # @CiudadanosCs
     "108994652",  # @Albert_Rivera
     "552561770",  # @InesArrimadas
+    "2223841798", # @GirautaOficial
+    "3709301116", # @sdelcampocs
 
     # Convergència Democràtica de Catalunya (CDC)
     "10242562",   # @ConvergenciaCAT
