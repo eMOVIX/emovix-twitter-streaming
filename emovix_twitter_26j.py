@@ -40,6 +40,7 @@ hashtags = [
     "#Elecciones26j",
     "#Elecciones2016",
     "#Elecciones26J",
+    "#ReformaLaboral",
     "#RescataMiVoto",
     "#NOalVotoRogado",
     "#ValoraTuVoto",
@@ -59,6 +60,8 @@ hashtags = [
     # PSOE
     "#PSOE",
     u"#LaHoraDelSí",
+    u"#UnSíPorElCambio",
+    u"#MotivosParaElSí",
     "#PSC",
     "#FemForaRajoy",
     "#SomLaSolucio",
@@ -113,6 +116,12 @@ hashtags = [
     "geroabai",
     # En Marea
     "En_Marea", "GZtenquestar",
+    # Education
+    u"#Educación",
+    "#Educacion",
+    "LOMCE",
+    "Empleo juvenil",
+    "Ley Wert"
     ]
 
 follow = [
