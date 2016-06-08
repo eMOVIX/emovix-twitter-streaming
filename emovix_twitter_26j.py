@@ -205,7 +205,6 @@ class CustomStreamListener(tweepy.StreamListener):
         for field in ignored_user_fields:
             del tweet['user'][field]
 
-        print tweet
         self.db[twitterStatusCol].update(tweet, tweet, upsert=True)
         self.db[twitterUserCol].update({"screen_name": tweet['user']['screen_name']}, user, upsert=True)
 
